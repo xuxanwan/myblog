@@ -8,9 +8,18 @@ categories: jekyll
 第一次使用markdown写博文。就用`Jekyll`安装过程，做第一篇博文。
 一,安装`Jekyll`
 	a,前期准备：装好的ubuntu系统。
-	b,`Jekyll`需要ruby环境支持,故先安装ruby环境.{% highlight bash %}sudo apt-get install ruby1.9.1-dev{% endhighlight %}
-	c,接着安装`Jekyll`通过如下命令.{% highlight bash %}gem install jekyll # if this fails then sudo gem install Jekyll{% endhighlight %}
-	d,若发现报错如下:![Jekyll安装报错.png](/public/upload/Jekyll安装报错.png)则通过如下命令安装js运行环境.{% highlight bash %}apt-get install nodejs{% endhighlight %}
+	b,`Jekyll`需要ruby环境支持,故先安装ruby环境.
+		{% highlight bash %}
+			sudo apt-get install ruby1.9.1-dev
+		{% endhighlight %}
+	c,接着安装`Jekyll`通过如下命令.
+		{% highlight bash %}
+			gem install jekyll # if this fails then sudo gem install Jekyll
+		{% endhighlight %}
+	d,若发现报错如下:![Jekyll安装报错.png](/public/upload/Jekyll安装报错.png)则通过如下命令安装js运行环境.
+		{% highlight bash %}
+			apt-get install nodejs
+		{% endhighlight %}
 	f,敲入jekyll -v 若显示版本信息则安装成功.
 	g,通过 Jekyll new myblog 新建本地博客
 	h,通过 jekyll serve启动博客本地预览服务器.这时候可以通过访问127.0.0.1:4000 访问你的博客.
