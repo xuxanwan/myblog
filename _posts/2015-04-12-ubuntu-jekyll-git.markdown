@@ -40,3 +40,4 @@ categories: jekyll
 * 3.[git-基本用法](http://lugir.com/git-basic.html)
 * 4.[Jekyll博客搭建教程](http://www.tuicool.com/articles/Yr6RjuJ)
 * 5.[搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
+* 6.[一个简单易用的markdown编辑器](http://jbt.github.io/markdown-editor)
