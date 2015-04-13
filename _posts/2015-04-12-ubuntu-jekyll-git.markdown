@@ -33,7 +33,7 @@ categories: jekyll
 
 
 
-### 三,参考网
+### 三,参考网址
 
 * 1.[git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 * 2.[Markdown标签库](http://jekyllrb.com/docs/templates/)
