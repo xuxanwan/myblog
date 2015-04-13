@@ -21,7 +21,6 @@ categories: jekyll
 ### 二,托管到github
 
 * a,若没有git环境则安装```git apt-get install git```
-
 * b,注册github帐号,并在github上创建新项目,命名为myblog
 * c,进入jekyll创建的博客文件夹,使用```git init``` 初始化文件夹.
 * d,关联远程我们创建的git仓库:```git remote add origin <server>```
@@ -34,9 +33,9 @@ categories: jekyll
 
 
 
-参考网址:
+### 三,参考网址:
 * 1.[git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
-* 2.[Templates](http://jekyllrb.com/docs/templates/) Markdown标签库
+* 2.[Markdown标签库](http://jekyllrb.com/docs/templates/)
 * 3.[git-基本用法](http://lugir.com/git-basic.html)
 * 4.[Jekyll博客搭建教程](http://www.tuicool.com/articles/Yr6RjuJ)
 * 5.[搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门](http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html)
