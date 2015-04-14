@@ -4,7 +4,7 @@ email: xuxanwan@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Life isn't about finding yourself. Life is about creating yourself. 
 baseurl: "/myblog" # the subpath of your site, e.g. /blog/
-url: "http://xuxanwan.github.io/" # the base hostname & protocol for your site
+url: "http://xuxanwan.github.io" # the base hostname & protocol for your site
 twitter_username: xPleasure5
 github_username:  xuxanwan
 
