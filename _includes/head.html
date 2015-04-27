@@ -11,4 +11,13 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   <link rel="shortcut icon" href="{{ "/public/material/xicon.ico" | prepend: site.baseurl }}"> 
   <link rel="Bookmark" href="{{ "/public/material/xicon.ico" | prepend: site.baseurl }}">
+  
+  <link rel="stylesheet" href="/css/google-code-prettify/prettify.css">
+  <script src="/css/google-code-prettify/prettify.js"></script>
+  <script type="text/javascript">
+	  $(function(){
+		$("pre").addClass("prettyprint");
+		prettyPrint();
+	  });
+  </script>
 </head>
