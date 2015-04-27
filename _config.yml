@@ -9,4 +9,7 @@ twitter_username: xPleasure5
 github_username:  xuxanwan
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
+markdown: redcarpet
+redcarpet:
+	extensions: ["fenced_code_blocks", "autolink", "tables", "strikethrough"]
