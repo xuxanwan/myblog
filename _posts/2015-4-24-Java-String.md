@@ -10,14 +10,14 @@ categories: Java基础
 * 循环中StringBuilder的对象创建个数。（使用javap -c 查看[eclipse中使用javap](http://stackoverflow.com/questions/7056987/how-to-use-javap-with-eclipse) ）    
 
  ``
-		public class StringTest {
-		  public static void main(String[] args) {
-		    String mango = "mango";
-		    String s = "abc"+ mango+ "def"+47;
-		    System.out.println(s);
-		  }
-		} 
- ``
+	public class StringTest {
+	  public static void main(String[] args) {
+		String mango = "mango";
+		String s = "abc"+ mango+ "def"+47;
+		System.out.println(s);
+	  }
+	}
+``
 
 
 
