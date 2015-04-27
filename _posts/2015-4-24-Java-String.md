@@ -8,6 +8,7 @@ categories: Java基础
 1. String是常量，它们的值在创建之后不能更改。（常量的定义：）
 2. 因为是常量，对String的+操作的重载存在问题。虽然通过引入StringBuilder优化过String的+，但是在循环中使用时，还是存在性能问题。
 * 循环中StringBuilder的对象创建个数。（使用javap -c 查看[eclipse中使用javap](http://stackoverflow.com/questions/7056987/how-to-use-javap-with-eclipse) ）    
+
  ```java 
 		public class StringTest {
 		  public static void main(String[] args) {
@@ -17,6 +18,11 @@ categories: Java基础
 		  }
 		} 
  ```
+
+
+
+
+
 如上Java代码用`javap -c Concatenation` 解析出来如下： 
 ```c
 Compiled from "StringTest.java"
