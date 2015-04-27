@@ -9,7 +9,7 @@ categories: Java基础
 2. 因为是常量，对String的+操作的重载存在问题。虽然通过引入StringBuilder优化过String的+，但是在循环中使用时，还是存在性能问题。
 * 循环中StringBuilder的对象创建个数。（使用javap -c 查看[eclipse中使用javap](http://stackoverflow.com/questions/7056987/how-to-use-javap-with-eclipse) ）    
 
- ```java 
+ ``
 		public class StringTest {
 		  public static void main(String[] args) {
 		    String mango = "mango";
@@ -17,7 +17,7 @@ categories: Java基础
 		    System.out.println(s);
 		  }
 		} 
- ```
+ ``
 
 
 
