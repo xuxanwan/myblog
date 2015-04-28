@@ -24,6 +24,11 @@ categories: Java基础
 
 
 如上Java代码用`javap -c Concatenation` 解析出来如下： 
+
+
+
+
+
 <pre>
 Compiled from "StringTest.java"
 public class test.StringTest {
@@ -57,6 +62,10 @@ Code:
 </pre>
 
 
+
+
+
+
 我们可以发现Java编译器的处理是，新建StringBuilder对象，使用该对象完成对字符串的+操作后，最终将StringBuilder转换成String返回。这一定程度上提高了，程序的处理效率。
 *  但是这并不意味着我们可以随意使用String对象，反正编译器可以为我们优化性能。从以下代码可以看出来：
 <pre>
@@ -81,7 +90,17 @@ public class StringTest {
 </pre>
 
 
+
+
+
+
+
 对其进行编译处理
+
+
+
+
+
 <pre>
 Compiled from "StringTest.java"
 public class test.StringTest {
@@ -143,6 +162,9 @@ public class test.StringTest {
 }
 
 </pre>
+
+
+
 
 
 直接使用StringBuilder和使用String然后依靠编译器优化的区别为，一个是由编译器在循环内自动生成的StringBuilder，一个是在循环外手动创建的StringBuilder。很明显，在编译器自动优化时会产生大量的多余的StringBuilder对象。因此在循环中使用toString等操作时，最好自己创建一个StringBuilder对象。
