@@ -37,7 +37,7 @@ categories: Java基础
 		0: aload_0       
 		1: invokespecial #8                  // Method java/lang/Object."<init>":()V
 		4: return        
-		
+
 		public static void main(java.lang.String[]);
 		Code:
 		0: ldc           #16                 // String mango
@@ -78,7 +78,7 @@ categories: Java基础
 	    }
 	    return result;
 	  }
-	  
+
 	  public String explicit(String [] fields){
 	    StringBuilder result = new StringBuilder();
 	    for(int i=0; i<fields.length; i++){
@@ -112,7 +112,7 @@ categories: Java基础
 	       0: aload_0       
 	       1: invokespecial #8                  // Method java/lang/Object."<init>":()V
 	       4: return        
-	
+
 	  public java.lang.String implicit(java.lang.String[]);
 	    Code:
 	       0: ldc           #16                 // String 
@@ -138,7 +138,7 @@ categories: Java基础
 	      35: if_icmplt     8
 	      38: aload_2       
 	      39: areturn       
-	
+
 	  public java.lang.String explicit(java.lang.String[]);
 	    Code:
 	       0: new           #18                 // class java/lang/StringBuilder
