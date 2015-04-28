@@ -97,3 +97,9 @@ you've got to put paragraph tags in your blockquotes:
 	</blockquote>
 
 ---
+
+Here is an example of AppleScript:
+
+    tell application "Foo"
+        beep
+    end tell

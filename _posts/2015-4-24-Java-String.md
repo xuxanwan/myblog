@@ -11,15 +11,15 @@ categories: Java基础
 
 
 ----------
-
-    public class StringTest {
+	
+	public class StringTest {
 		public static void main(String[] args) {
 			String mango = "mango";
 			String s = "abc"+ mango+ "def"+47;
 			System.out.println(s);
 		}
 	}
-
+	
 如上Java代码用`javap -c Concatenation` 解析出来如下： 
 
 	public class _13.CopyOfStringTest {
