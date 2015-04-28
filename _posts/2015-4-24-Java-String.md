@@ -30,6 +30,7 @@ categories: Java基础
 
 
 <pre>
+
 Compiled from "StringTest.java"
 public class test.StringTest {
 public test.StringTest();
@@ -59,6 +60,7 @@ Code:
 34: invokevirtual #44                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
 37: return        
 }
+
 </pre>
 
 
@@ -69,6 +71,7 @@ Code:
 我们可以发现Java编译器的处理是，新建StringBuilder对象，使用该对象完成对字符串的+操作后，最终将StringBuilder转换成String返回。这一定程度上提高了，程序的处理效率。
 *  但是这并不意味着我们可以随意使用String对象，反正编译器可以为我们优化性能。从以下代码可以看出来：
 <pre>
+
 public class StringTest {
   public String implicit(String[] fields){
     String result = "";
@@ -87,6 +90,7 @@ public class StringTest {
   }
 
 }
+
 </pre>
 
 
@@ -102,6 +106,7 @@ public class StringTest {
 
 
 <pre>
+
 Compiled from "StringTest.java"
 public class test.StringTest {
   public test.StringTest();
