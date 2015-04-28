@@ -21,123 +21,117 @@ categories: Java基础
     }
 
 
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
-    
 如上Java代码用`javap -c Concatenation` 解析出来如下： 
 
-	public class _13.CopyOfStringTest {
-	  public _13.CopyOfStringTest();
-		Code:
-		   0: aload_0       
-		   1: invokespecial #8                  // Method java/lang/Object."<init>":()V
-		   4: return        
+    public class _13.CopyOfStringTest {
+        public _13.CopyOfStringTest();
+        Code:
+           0: aload_0       
+           1: invokespecial #8                  // Method java/lang/Object."<init>":()V
+           4: return        
 
-	  public static void main(java.lang.String[]);
-		Code:
-		   0: ldc           #16                 // String mango
-		   2: astore_1      
-		   3: new           #18                 // class java/lang/StringBuilder
-		   6: dup           
-		   7: ldc           #20                 // String abc
-		   9: invokespecial #22                 // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
-		  12: aload_1       
-		  13: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-		  16: ldc           #29                 // String def
-		  18: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-		  21: bipush        47
-		  23: invokevirtual #31                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
-		  26: invokevirtual #34                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-		  29: astore_2      
-		  30: getstatic     #38                 // Field java/lang/System.out:Ljava/io/PrintStream;
-		  33: aload_2       
-		  34: invokevirtual #44                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
-		  37: return        
-	}
+      public static void main(java.lang.String[]);
+        Code:
+           0: ldc           #16                 // String mango
+           2: astore_1      
+           3: new           #18                 // class java/lang/StringBuilder
+           6: dup           
+           7: ldc           #20                 // String abc
+           9: invokespecial #22                 // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
+          12: aload_1       
+          13: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+          16: ldc           #29                 // String def
+          18: invokevirtual #25                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+          21: bipush        47
+          23: invokevirtual #31                 // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+          26: invokevirtual #34                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+          29: astore_2      
+          30: getstatic     #38                 // Field java/lang/System.out:Ljava/io/PrintStream;
+          33: aload_2       
+          34: invokevirtual #44                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+          37: return        
+    }
 
 我们可以发现Java编译器的处理是，新建StringBuilder对象，使用该对象完成对字符串的+操作后，最终将StringBuilder转换成String返回。这一定程度上提高了，程序的处理效率。
 *  但是这并不意味着我们可以随意使用String对象，反正编译器可以为我们优化性能。从以下代码可以看出来：
 
-	public class CopyOfStringTest {
-	  public String implicit(String[] fields) {
-		String result = "";
-		for (int i = 0; i < fields.length; i++) {
-		  result += fields[i];
-		}
-		return result;
-	  }
+    public class CopyOfStringTest {
+      public String implicit(String[] fields) {
+        String result = "";
+        for (int i = 0; i < fields.length; i++) {
+          result += fields[i];
+        }
+        return result;
+      }
 
-	  public String explicit(String[] fields) {
-		StringBuilder result = new StringBuilder();
-		for (int i = 0; i < fields.length; i++) {
-		  result.append(fields[i]);
-		}
-		return result.toString();
-	  }
-	}
+      public String explicit(String[] fields) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < fields.length; i++) {
+          result.append(fields[i]);
+        }
+        return result.toString();
+      }
+    }
 
 对其进行编译处理
 
-	public class _13.CopyOfStringTest {
-	  public _13.CopyOfStringTest();
-		Code:
-		   0: aload_0       
-		   1: invokespecial #8                  // Method java/lang/Object."<init>":()V
-		   4: return        
+    public class _13.CopyOfStringTest {
+      public _13.CopyOfStringTest();
+        Code:
+           0: aload_0       
+           1: invokespecial #8                  // Method java/lang/Object."<init>":()V
+           4: return        
 
-	  public java.lang.String implicit(java.lang.String[]);
-		Code:
-		   0: ldc           #16                 // String 
-		   2: astore_2      
-		   3: iconst_0      
-		   4: istore_3      
-		   5: goto          32
-		   8: new           #18                 // class java/lang/StringBuilder
-		  11: dup           
-		  12: aload_2       
-		  13: invokestatic  #20                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
-		  16: invokespecial #26                 // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
-		  19: aload_1       
-		  20: iload_3       
-		  21: aaload        
-		  22: invokevirtual #29                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-		  25: invokevirtual #33                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-		  28: astore_2      
-		  29: iinc          3, 1
-		  32: iload_3       
-		  33: aload_1       
-		  34: arraylength   
-		  35: if_icmplt     8
-		  38: aload_2       
-		  39: areturn       
+      public java.lang.String implicit(java.lang.String[]);
+        Code:
+           0: ldc           #16                 // String 
+           2: astore_2      
+           3: iconst_0      
+           4: istore_3      
+           5: goto          32
+           8: new           #18                 // class java/lang/StringBuilder
+          11: dup           
+          12: aload_2       
+          13: invokestatic  #20                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+          16: invokespecial #26                 // Method java/lang/StringBuilder."<init>":(Ljava/lang/String;)V
+          19: aload_1       
+          20: iload_3       
+          21: aaload        
+          22: invokevirtual #29                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+          25: invokevirtual #33                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+          28: astore_2      
+          29: iinc          3, 1
+          32: iload_3       
+          33: aload_1       
+          34: arraylength   
+          35: if_icmplt     8
+          38: aload_2       
+          39: areturn       
 
-	  public java.lang.String explicit(java.lang.String[]);
-		Code:
-		   0: new           #18                 // class java/lang/StringBuilder
-		   3: dup           
-		   4: invokespecial #45                 // Method java/lang/StringBuilder."<init>":()V
-		   7: astore_2      
-		   8: iconst_0      
-		   9: istore_3      
-		  10: goto          24
-		  13: aload_2       
-		  14: aload_1       
-		  15: iload_3       
-		  16: aaload        
-		  17: invokevirtual #29                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-		  20: pop           
-		  21: iinc          3, 1
-		  24: iload_3       
-		  25: aload_1       
-		  26: arraylength   
-		  27: if_icmplt     13
-		  30: aload_2       
-		  31: invokevirtual #33                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-		  34: areturn       
-	}
+      public java.lang.String explicit(java.lang.String[]);
+        Code:
+           0: new           #18                 // class java/lang/StringBuilder
+           3: dup           
+           4: invokespecial #45                 // Method java/lang/StringBuilder."<init>":()V
+           7: astore_2      
+           8: iconst_0      
+           9: istore_3      
+          10: goto          24
+          13: aload_2       
+          14: aload_1       
+          15: iload_3       
+          16: aaload        
+          17: invokevirtual #29                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+          20: pop           
+          21: iinc          3, 1
+          24: iload_3       
+          25: aload_1       
+          26: arraylength   
+          27: if_icmplt     13
+          30: aload_2       
+          31: invokevirtual #33                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+          34: areturn       
+    }
 
 
 
