@@ -30,7 +30,6 @@ categories: Java基础
 
 
 <pre>
-
 	Compiled from "StringTest.java"
 	public class test.StringTest {
 	public test.StringTest();
@@ -60,7 +59,6 @@ categories: Java基础
 	34: invokevirtual #44                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
 	37: return        
 	}
-
 </pre>
 
 
