@@ -9,7 +9,7 @@ categories: Java基础
 2. 因为是常量，对String的+操作的重载存在问题。虽然通过引入StringBuilder优化过String的+，但是在循环中使用时，还是存在性能问题。
 * 循环中StringBuilder的对象创建个数。（使用javap -c 查看[eclipse中使用javap](http://stackoverflow.com/questions/7056987/how-to-use-javap-with-eclipse) ）    
 
-<pre>
+
 	public class StringTest {
 	  public static void main(String[] args) {
 		String mango = "mango";
@@ -17,14 +17,14 @@ categories: Java基础
 		System.out.println(s);
 	  }
 	}
-</pre>
+
 
 
 
 
 
 如上Java代码用`javap -c Concatenation` 解析出来如下： 
-<pre>
+
 	public class _13.CopyOfStringTest {
 	  public _13.CopyOfStringTest();
 		Code:
@@ -53,10 +53,10 @@ categories: Java基础
 		  34: invokevirtual #44                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
 		  37: return        
 	}
-</pre>
+
 我们可以发现Java编译器的处理是，新建StringBuilder对象，使用该对象完成对字符串的+操作后，最终将StringBuilder转换成String返回。这一定程度上提高了，程序的处理效率。
 *  但是这并不意味着我们可以随意使用String对象，反正编译器可以为我们优化性能。从以下代码可以看出来：
-<pre class="prettyPrint">
+
 	public class CopyOfStringTest {
 	  public String implicit(String[] fields) {
 		String result = "";
@@ -74,9 +74,9 @@ categories: Java基础
 		return result.toString();
 	  }
 	}
-</pre>
+
 对其进行编译处理
-``
+
 	public class _13.CopyOfStringTest {
 	  public _13.CopyOfStringTest();
 		Code:
@@ -134,7 +134,7 @@ categories: Java基础
 		  31: invokevirtual #33                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
 		  34: areturn       
 	}
-``
+
 
 
 
