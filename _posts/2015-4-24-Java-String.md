@@ -69,7 +69,7 @@ categories: Java基础
 我们可以发现Java编译器的处理是，新建StringBuilder对象，使用该对象完成对字符串的+操作后，最终将StringBuilder转换成String返回。这一定程度上提高了，程序的处理效率。
 *  但是这并不意味着我们可以随意使用String对象，反正编译器可以为我们优化性能。从以下代码可以看出来：
 
-
+<pre class="prettyPrint">
 	public class StringTest {
 	  public String implicit(String[] fields){
 	    String result = "";
@@ -88,7 +88,7 @@ categories: Java基础
 	  }
 	
 	}
-
+</pre>
 
 
 
@@ -104,7 +104,7 @@ categories: Java基础
 
 
 
-
+<pre class="prettyPrint">
 	Compiled from "StringTest.java"
 	public class test.StringTest {
 	  public test.StringTest();
@@ -163,7 +163,7 @@ categories: Java基础
 	      31: invokevirtual #33                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
 	      34: areturn       
 	}
-
+</pre>
 
 
 
