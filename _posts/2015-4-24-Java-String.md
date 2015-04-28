@@ -29,7 +29,7 @@ categories: Java基础
 
 
 
-<pre>
+<pre class="prettyPrint">
 	Compiled from "StringTest.java"
 	public class test.StringTest {
 		public test.StringTest();
