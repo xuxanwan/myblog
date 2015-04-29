@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java之String，StringBuffer，StringBuilder"
+title:  "Java之String"
 date:   2015-4-24 14:40:35
 categories: Java基础
 ---
