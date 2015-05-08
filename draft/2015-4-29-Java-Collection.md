@@ -6,7 +6,7 @@ categories: Java基础
 
 ---
 ### 一、Collection
-
+Collection大致可以分为List,Set,Queue,Map四个种类.
 + List 按照插入的顺序保存元素
 	- 若使用的都为List接口包含的方法，在对象的创建处能够方便的修改实现，例如:
 	`List<Apple> apples = new ArrayList<Apple>();`
