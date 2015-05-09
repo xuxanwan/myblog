@@ -11,8 +11,16 @@ categories: jekyll
 
 * a,前期准备：装好的ubuntu系统。
 * b,Jekyll需要ruby环境支持,故先安装ruby环境.```sudo apt-get install ruby1.9.1-dev```
-* c,接着安装Jekyll通过如下命令.```
-	gem install jekyll # if this fails then sudo gem install Jekyll```
+* c,接着安装Jekyll通过如下命令.
+```gem install jekyll ``` # if this fails then ```sudo gem install Jekyll```
+其间会出现```ERROR:  Could not find a valid gem 'jekyll' (>= 0), here is why:
+          Unable to download data from https://rubygems.org/ - Errno::ECONNRESET: Connection reset by peer - SSL_connect (https://api.rubygems.org/quick/Marshal.4.8/jekyll-2.5.3.gemspec.rz)```解决方案参考[RubyGems](http://ruby.taobao.org/)  换成淘宝源后，又出现如下问题```alcc@alcc-K52Dr:~$ gem install jekyll
+Fetching: liquid-2.6.2.gem (100%)
+ERROR:  While executing gem ... (Errno::EACCES)
+    Permission denied @ dir_s_mkdir - /var/lib/gems
+```
+
+
 * d,若发现报错如下:![Jekyll安装报错.png]({{ "/public/upload" | prepend: site.baseurl }}/Jekyll安装报错.png)则通过如下命令安装js运行环境.```apt-get install nodejs```
 * e,敲入```jekyll -v ```若显示版本信息则安装成功.
 * f,通过``` Jekyll new myblog``` 新建本地博客
