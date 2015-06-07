@@ -1,0 +1,128 @@
+---
+layout: post
+title:  "FastJson的使用"
+date:   2015-06-06
+categories: Java
+
+---
+公司项目前端需要后端传递出来的json数据.故研究下
+
+###JSON是什么:
+JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。 易于人阅读和编写。同时也易于机器解析和生成。 
+###JSON用于描述数据结构，有以下形式存在。
+- 对象（object）：一个对象以“{”开始，并以“}”结束。一个对象包含一系列非排序的名称／值对，每个名称／值对之间使用“,”分区。
+- 名称／值（collection）：名称和值之间使用“：”隔开，一般的形式是：
+	`{name:value}`
+- 一个名称是一个字符串； 一个值可以是一个字符串，一个数值，一个对象，一个布尔值，一个有序列表，或者一个null值。
+- 值的有序列表（Array）：一个或者多个值用“,”分区后，使用“[”，“]”括起来就形成了这样的列表，形如：
+	`[collection, collection]`
+- 字符串：以""括起来的一串字符。
+- 数值：一系列0-9的数字组合，可以为负数或者小数。还可以用“e”或者“E”表示为指数形式。
+- 布尔值：表示为true或者false。在很多语言[哪个／哪些？]中它被解释为数组。
+
+###Java对JSON的处理
+Java支持对Json的库有:[google-gson](code.google.com/p/google-gson/),[FastJson](http://sourceforge.net/projects/fastjson/),[JackSon](http://jackson.codehaus.org/)等等。我挑选了fastjson来实现java对json的处理。
+
+####FastJSON
++ `JSON.parseArray(jsonData, String.class)`把JSON数据转换成普通字符串列表
++ `JSON.parseObject(jsonData, clazz)`把JSON数据转换成指定的java对象
++ `JSON.toJSONString(object)`把java对象转换成JSON数据
++ `JSON.parseArray(jsonData, clazz)`把JSON数据转换成指定的java对象列表
++ `JSON.parseObject(jsonData, new TypeReference<List<Map<String, Object>>>() { })`
+ 把JSON数据转换成较为复杂的java对象列表 
+{% highlight java %}
+package chest.treasure.json.util.fastjson;
+
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.Test;
+
+import chest.treasure.json.util.fastjson.domain.SysMenu;
+
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
+
+public class FastJsonDemo {
+	@Test
+	public void parseString() {
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("[");
+			sb.append("{");
+				sb.append("'weixin'").append(":").append("'simple'").append(",");
+				sb.append("'qq'").append(":").append("'249661143'").append("");
+			sb.append("}");
+			sb.append(",");
+			sb.append("{");
+				sb.append("'weixin'").append(":").append("'pleasures'").append(",");
+				sb.append("qq").append(":").append("'827632093'").append("");
+			sb.append("}");
+		sb.append("]");
+		
+		String jsonStr = sb.toString();
+		
+		//转换成jsonArray,能够通过iterator遍历,转换的一定要带有[]其实的json串
+		JSONArray jarr = JSONArray.parseArray(jsonStr);
+		for(Iterator<Object> iterator = jarr.iterator();iterator.hasNext();) {
+			JSONObject job = (JSONObject)iterator.next();
+			String weixin = job.getString("weixin").toString();
+			System.out.println(weixin);
+		}
+		
+		//把JSON数据转换成普通字符串列表,也可以是指定类
+		List<String> listList = JSON.parseArray(jsonStr, String.class);
+		System.out.println(listList);
+		
+//		把JSON数据转换成较为复杂的java对象列表
+		List<Map<String, Object>> parseObject = JSON.parseObject(jsonStr,
+				new TypeReference<List<Map<String, Object>>>() {
+				});
+		System.out.println(parseObject);
+		
+	}
+	
+	@Test
+	public void parseEntity() {
+		SysMenu sysMenu = new SysMenu();
+		sysMenu.setMenuId(123456789);
+		sysMenu.setMenuDescription("我了个去");
+		
+		SysMenu sysMenuParent = new SysMenu();
+		sysMenuParent.setMenuId(1122);
+		sysMenuParent.setMenuDescription("wo qu ");
+		sysMenuParent.getSmLists().add(sysMenu);
+		sysMenuParent.getSmLists().add(sysMenuParent);
+		
+//		把java对象转换成JSON数据
+		String jsonStr= JSON.toJSONString(sysMenuParent);
+		System.out.println("jsonStr:---"+jsonStr);
+		
+		StringBuffer sb = new StringBuffer(jsonStr);
+		sb.insert(0, "[");
+		sb.insert(sb.length(), "]");
+		
+		JSONArray parseArray = JSONArray.parseArray(sb.toString());
+		for(Iterator iter = parseArray.iterator();iter.hasNext();) {
+			System.out.println("###"+iter.next());
+		}
+		
+		//解析json字符串成object类,object中存在的为类似一个map
+		Object object = JSONObject.parse(jsonStr);
+		System.out.println("object:---"+object);
+		
+		//把JSON数据转换成指定的java对象
+		SysMenu temp = JSON.parseObject(jsonStr, SysMenu.class);
+		System.out.println("Description:---"+temp.getMenuDescription());
+		System.out.println("SmLists:---"+temp.getSmLists());
+	}
+}
+
+{% endhighlight %}
+###参考:
+- [介绍 JSON](http://json.org/json-zh.html)
+- [JSON WIKI](http://zh.wikipedia.org/wiki/JSON)

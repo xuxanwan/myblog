@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java之Collection"
+title:  "Java之Collection一"
 date:   2015-4-29 09:16:03
 categories: Java基础
 
@@ -56,34 +56,8 @@ apples = new LinkedList<Apple>();
 最后，在《Practical Java》一书中Peter Haggar建议使用一个简单的数组（Array）来代替Vector或ArrayList。尤其是对于执行效率要求高的程序更应如此。因为使用数组(Array)避免了同步、额外的方法调用和不必要的重新分配空间的操作。
 
 
-##二、Map
-
-#### HashMap：
-
-* 以Entry[]数组实现,根据key的hash值取模Entry[].length得到数组下标(hash(key)%len).最终存储方式是无序的。插入元素时，如果两条Key落在同一个数组中(比如哈希值1和17取模16后都属于第一个Entry)，Entry用一个next属性实现多个Entry以单向链表存放，先入Entry将next指向桶当前的Entry。
-
-![HashMap.png]({{ "/public/upload" | prepend: site.baseurl }}/HashMap.png)
-
-* 当Entry[]使用了75%时,会成倍扩容Entry[]，并重新分配所有原来的Entry，常用的优化是在初始化时对HashMap的大小有个预估值.
-
-
-#### HashTable：相对于HashMap，这个是同步的。
-#### TreeMap：根据红黑树实现，他是更具key的顺序排序的。
-#### LinkedHashMap：保存了插入的顺序。
-
-### 2、Map的使用
-+ HashMap的遍历方式
-
-
-### 七、Set的区别
-
-### 八、Set的使用
-
-### 九、Queue的区别
-
-### 十、Queue的使用
-
 
 ##参考链接
 
-[江南白衣~关于Java集合的小抄](http://calvin1978.blogcn.com/articles/collection.html)
+1. [江南白衣~关于Java集合的小抄](http://calvin1978.blogcn.com/articles/collection.html)
+2. [Java 集合系列12之 TreeMap详细介绍(源码解析)和使用示例](http://www.cnblogs.com/skywang12345/p/3310928.html)
