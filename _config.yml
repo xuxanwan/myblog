@@ -4,13 +4,13 @@ name: xuxanwan's Blog
 description: Life isn't about finding yourself. Life is about creating yourself. 
 
 # url is currently only used only for the RSS feed in feed.xml
-url: http://xuxanwan.github.io
+url: http://fengzii.com/
 
 # baseurl will often be '', but for a project page on gh-pages, it needs to
 # be the project name.
 # *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
 #     run it like so: jekyll serve --baseurl=''
-baseurl: /myblog
+baseurl: /
 
 # This can be '' to hide the Github nav button
 github: 'xuxanwan'
