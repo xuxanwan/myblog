@@ -117,6 +117,11 @@ categories: 前端
 		</p>
 	</div>
 ```
+
+##使用中碰到的问题
+1.在系统中,kindeditor是在tab页下加载的,测试提出的bug是,当tab页面第一次关闭,再次打开的时候,会出现如下报错`VM65105:32 Uncaught TypeError: Cannot read property 'getSelection' of undefined`
+经排查,发现是因为关闭后,页面对象被销毁了,而kindeditor对象并没有被销毁的缘故.故在此打开时我的判断kindeditor对象是否存在的函数失效,并未进行重新加载编辑器.
+解决方案: 将editor更改为局部变量,值在函数内部生效.当跳出函数时就为null,这样的话就能够再次生成了.
 ##参考
 1. [KindEditor编辑器使用方法](http://kindeditor.net/docs/usage.html)
 2. [ KindEditor 4 输入框限定字数](http://blog.csdn.net/myweishanli/article/details/25800185)
