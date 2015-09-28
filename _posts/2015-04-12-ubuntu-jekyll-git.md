@@ -21,7 +21,7 @@ ERROR:  While executing gem ... (Errno::EACCES)
 ```
 
 
-* d,若发现报错如下:![Jekyll安装报错.png]({{ "/public/upload" | prepend: site.baseurl }}/Jekyll安装报错.png)则通过如下命令安装js运行环境.```apt-get install nodejs```
+* d,若发现报错如下:![Jekyll安装报错.png]({{ "/images/2015-04-12-ubuntu-jekyll-git" | prepend: site.baseurl }}/Jekyll安装报错.png)则通过如下命令安装js运行环境.```apt-get install nodejs```
 * e,敲入```jekyll -v ```若显示版本信息则安装成功.
 * f,通过``` Jekyll new myblog``` 新建本地博客
 * g,通过 ```jekyll serve```启动博客本地预览服务器.这时候可以通过访问127.0.0.1:4000 访问你的博客.

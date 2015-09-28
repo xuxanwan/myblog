@@ -32,7 +32,7 @@ apples = new LinkedList<Apple>();
 
 * 以Entry[]数组实现,根据key的hash值取模Entry[].length得到数组下标(hash(key)%len).最终存储方式是无序的。插入元素时，如果两条Key落在同一个数组中(比如哈希值1和17取模16后都属于第一个Entry)，Entry用一个next属性实现多个Entry以单向链表存放，先入Entry将next指向桶当前的Entry。
 
-![HashMap.png]({{ "/public/upload" | prepend: site.baseurl }}/HashMap.png)
+![HashMap.png]({{ "/images/2015-06-07-Java-Collection2" | prepend: site.baseurl }}/HashMap.png)
 
 * 当Entry[]使用了75%时,会成倍扩容Entry[]，并重新分配所有原来的Entry，常用的优化是在初始化时对HashMap的大小有个预估值.
 
