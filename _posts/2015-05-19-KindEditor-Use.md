@@ -3,7 +3,7 @@ layout: post
 title:  "KindEditor使用"
 date:   2015-05-19
 categories: 前端
-
+comments: true
 ---
 最近在项目里使用到了富文本编辑框.以前就接触过KindEditor,这次系统的使用,故做些整理.
 

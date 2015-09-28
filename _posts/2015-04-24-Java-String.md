@@ -3,6 +3,7 @@ layout: post
 title:  "Java之String"
 date:   2015-4-24 14:40:35
 categories: Java基础
+comments: true
 ---
 ### 一、String,StringBuffer, StringBuilder 的区别是什么？String为什么是不可变的？###
 1. String是常量，它们的值在创建之后不能更改。（常量的定义：）

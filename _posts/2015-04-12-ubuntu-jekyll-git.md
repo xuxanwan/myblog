@@ -3,6 +3,7 @@ layout: post
 title:  "Ubuntu jekyll git使用小记"
 date:   2015-04-12 05:42:11
 categories: jekyll
+comments: true
 ---
 
 第一次使用markdown写博文。就用Jekyll安装过程，做第一篇博文。
