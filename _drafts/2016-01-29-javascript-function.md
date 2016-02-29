@@ -25,6 +25,8 @@
 
 ####参考
 [学习Javascript闭包（Closure）](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
+[理解Javascript的闭包](http://coolshell.cn/articles/6731.html)
+[JavaScript 里的闭包是什么？应用场景有哪些？](https://www.zhihu.com/question/19554716)
 ####理解
 - 闭包是什么:
 各种专业文献上的"闭包"（closure）定义非常抽象，很难看懂。我的理解是，闭包就是能够读取其他函数内部变量的函数。
