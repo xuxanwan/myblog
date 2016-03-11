@@ -61,4 +61,83 @@ public void excel( HttpServletResponse response) throws IOException {
 
 观察了下,导出到本地io的文件是ok的,通过HttpServletResponse得到的流里面都是`锟斤拷`也就是说,已经被转码了
 
+更奇葩的是,通过非springboot项目导出的文件是正常的. 难道springboot 对文件编码的时候瞎搞了?
 
+
+-------
+[设置了下CharacterEncodingFilter](http://stackoverflow.com/questions/24054648/how-to-config-characterencodingfilter-in-springboot)
+下载文件还是乱码
+
+```
+@RequestMapping("/list/excel")
+    public void excel(@RequestParam(value = "rcId") String rcId, @RequestParam(value = "startTime") String startTime,
+                      @RequestParam(value = "endTime") String endTime, HttpServletResponse response) throws IOException {
+        logger.info(startTime);
+        logger.info(endTime);
+        int id = Integer.parseInt(rcId);
+        Date date1 = new Date();
+        Date date2 = new Date(date1.getTime() - 24 * 3600);
+    String fileName = "百日哦你个发你.xls";
+    fileName = new String(fileName.getBytes(),"ISO8859-1");
+    response.setCharacterEncoding("ISO8859-1");
+		response.setContentType("application/vnd.ms-excel;charset=ISO8859-1");
+//        response.setContentType("application/zip");
+        response.setHeader("cache-control", "no-cache");
+        response.setHeader("Content-Disposition", "attachment; filename="+fileName);
+
+        List<Map<String, Object>> list = findFansRows(id, date1, date2);
+        // 声明一个工作薄
+        HSSFWorkbook workbook = new HSSFWorkbook();
+        // 获取标题行
+        String str = "";
+        Map<String, Object> map = list.get(0);
+        Set<String> keySet = map.keySet();
+        for (String key : keySet) {
+            str = str + key + ",";
+        }
+        String[] headers = str.split(",");
+        System.out.println("标题为：" + Arrays.toString(headers));
+        ExcelExport<Map<String, Object>> export = new ExcelExport<Map<String, Object>>();
+        OutputStream out =  response.getOutputStream();
+
+        try {
+            OutputStream fileOutputStream = new FileOutputStream("D://a.zip");
+            ZipOutputStream zipOutputStream = new ZipOutputStream(fileOutputStream);
+            ZipEntry ze = new ZipEntry("spy.xls");
+            zipOutputStream.putNextEntry(ze);
+
+
+
+
+            export.mapExport(workbook, "测试", headers, list);
+			workbook.write(out);
+            workbook.write(zipOutputStream);
+
+            zipOutputStream.close();
+
+
+            FileInputStream fileInputStream = new FileInputStream("D://a.zip");
+
+            byte[] buf = new byte[8194];
+            int len;
+            while ((len = fileInputStream.read(buf)) != -1) {
+                out.write(buf, 0, len);
+                System.out.println(JSON.toJSONString(buf));
+            }
+
+
+            out.flush();
+//            fileInputStream.close();
+            out.close();
+
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+
+    ```
+    ----------------
+    我的心好累,还是解决不掉
+    [downloading-a-file-from-spring-controllers](http://stackoverflow.com/questions/5673260/downloading-a-file-from-spring-controllers)
