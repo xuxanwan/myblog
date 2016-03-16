@@ -18,7 +18,14 @@
 |returnArray|如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。|
 
 
-
+- 示例
+```javascript
+var aa = ['aa','bb','cc','dd'];
+aa.splice(0,1);
+console.info('删除0下标下一个元素:'+aa);
+aa.splice(0,0,'ee');
+console.info('不删除,直接往下标增加ee:'+aa);
+```
 
 --------------
 ###javascript 闭包
@@ -46,7 +53,7 @@ var object  = {
 		var name = 'hello world';
 		var that = this;
 		return function(){
-			return name
+			return name//return that.name 返回方法体内的name
 		}
 	}	
 } 
