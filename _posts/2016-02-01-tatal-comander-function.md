@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "total comander 快捷键"
+title:  "Total comander 快捷键"
 date:   2016-02-16
 categories: 工具
 
 ---
 ###快捷键###
+
 ####定位
 
 | 快捷键|作用|
