@@ -1,7 +1,7 @@
 # Jekyll configuration
 
 name: xuxanwan's Blog
-description: Life isn't about finding yourself. Life is about creating yourself.
+description: Life isn't about finding yourself. Life is about creating yourself. 
 
 # url is currently only used only for the RSS feed in feed.xml
 url: http://fengzii.com/
@@ -18,23 +18,17 @@ github: 'xuxanwan'
 # Set this to your UA-# value, or '' to disable the block completely
 gaaccount: 'UA-65375782-1'
 
-# The 'comments' setting enables comments. You'll need to select either
-# disqus or isso below to choose a comment system. Individual posts can
-# override 'comments' to disable on a post-by-post basis.
+# Set this to your disqus shortname to enable comments. Note that the 'comments'
+# setting below must also be true. Individual posts can override 'comments' to
+# disable on a post-by-post basis
+disqus: 'fengzii'
 comments: true
-
-# Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
-isso: ''
-
-# Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
-disqus: ''
 
 permalink: /:year/:month/:title
 paginate: 3
 
-highlighter: rouge
-markdown: kramdown
-gems: ['jekyll-paginate']
+highlighter: pygments
+markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
