@@ -8,6 +8,7 @@ categories: 工具
 前段时间研究了下Elasticsearch，今天抽空整理份elsticsearch最简单的java api 调用demo出来。
 首先去[官网](https://www.elastic.co/products/elasticsearch "官网")下好ElasticSearch的运行程序。根据安装要求安装，我这里就不一一赘述了。
 安装好后，新建maven工程，引入包：
+
 ```xml
 <dependency>
     <groupId>org.elasticsearch</groupId>
@@ -15,9 +16,11 @@ categories: 工具
     <version>2.4.1</version>
 </dependency>
 ```
+
 我的代码是基2.4.1版本的。
 
 不废话，看CRUD代码，先是Bean类
+
 ```java
 public class Blog {
     private Integer id;
@@ -38,7 +41,9 @@ public class Blog {
 }
 ```
 
+
 然后是数据工厂类：
+
 ```java
 package com.fengzii;
 
@@ -78,6 +83,7 @@ public class DataFactory {
 ```
 
 主要的java操作类，在这里面，简单的实现了CRUD的操作：
+
 ```java
 package com.fengzii;
 
