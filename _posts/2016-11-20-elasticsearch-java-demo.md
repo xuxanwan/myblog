@@ -204,4 +204,4 @@ public class ElasticSearchHandler {
 ## 参考##
 1. [很好的一个中文文档](http://es.xiaoleilu.com/ "很好的一个中文文档")
 2. [ElasticSearch是什么](http://baike.baidu.com/link?url=jCYM5_MSVWT5IaknBWzxiWU7nILm-cOi6Uqz-V6PSuTtLB-pFhXRzQbLZNV0c20NEue1QFfHQFhQgpk57gawJ8SJ9zEAbcdizTzEU777D57 "ElasticSearch是什么")
-3. [官方文档](https://www.elastic.co/guide/index.html0)
+3. [官方文档](https://www.elastic.co/guide/index.html)
