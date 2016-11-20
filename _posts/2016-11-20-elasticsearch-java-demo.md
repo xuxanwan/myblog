@@ -1,18 +1,11 @@
----
-layout: post
-title:  "Elasticsearch java demo"
-date:   2016-12-20
-categories: 技术
-
----
 前段时间研究了下Elasticsearch，今天抽空整理份elsticsearch最简单的java api 调用demo出来。
 首先去[官网](https://www.elastic.co/products/elasticsearch "官网")下好ElasticSearch的运行程序。根据安装要求安装，我这里就不一一赘述了。
 安装好后，新建maven工程，引入包：
 ```xml
 <dependency>
-	<groupId>org.elasticsearch</groupId>
-	<artifactId>elasticsearch</artifactId>
-	<version>2.4.1</version>
+    <groupId>org.elasticsearch</groupId>
+    <artifactId>elasticsearch</artifactId>
+    <version>2.4.1</version>
 </dependency>
 ```
 我的代码是基2.4.1版本的。
