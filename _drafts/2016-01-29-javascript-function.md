@@ -18,13 +18,22 @@
 |returnArray|如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。|
 
 
-
+- 示例
+```javascript
+var aa = ['aa','bb','cc','dd'];
+aa.splice(0,1);
+console.info('删除0下标下一个元素:'+aa);
+aa.splice(0,0,'ee');
+console.info('不删除,直接往下标增加ee:'+aa);
+```
 
 --------------
 ###javascript 闭包
 
 ####参考
 [学习Javascript闭包（Closure）](http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html)
+[理解Javascript的闭包](http://coolshell.cn/articles/6731.html)
+[JavaScript 里的闭包是什么？应用场景有哪些？](https://www.zhihu.com/question/19554716)
 ####理解
 - 闭包是什么:
 各种专业文献上的"闭包"（closure）定义非常抽象，很难看懂。我的理解是，闭包就是能够读取其他函数内部变量的函数。
@@ -44,7 +53,7 @@ var object  = {
 		var name = 'hello world';
 		var that = this;
 		return function(){
-			return name
+			return name//return that.name 返回方法体内的name
 		}
 	}	
 } 
