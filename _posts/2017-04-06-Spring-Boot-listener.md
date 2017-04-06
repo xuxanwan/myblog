@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "spring boot 配置ServletContextListener"
+title:  "spring boot 配置web.xml的listener"
 date:   2017-4-6
 categories: spring boot
 ---
 
-## Spring Boot 配置ServletContextListener
+## Spring Boot 配置listener
 
 要将
 
