@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "spring boot 配置web.xml的listener"
+title:  "Spring Boot 配置web.xml的listener"
 date:   2017-4-6
 categories: spring boot
 ---
@@ -16,7 +16,7 @@ categories: spring boot
  </listener>
 ```
 
-更改为spring-boot的配置方式具体代码如下：
+更改为Spring-Boot的配置方式具体代码如下：
 
 ```java
 import org.springframework.boot.web.servlet.ServletContextInitializer;
