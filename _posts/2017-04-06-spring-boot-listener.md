@@ -5,7 +5,7 @@ date:   2017-4-6
 categories: spring boot
 ---
 
-## spring boot 配置ServletContextListener
+## Spring Boot 配置ServletContextListener
 
 要将
 
