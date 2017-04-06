@@ -8,13 +8,16 @@ categories: spring boot
 ## spring boot 配置ServletContextListener
 
 要将
+
 ```xml
 <listener>
   <listener-class>
    org.jasig.cas.client.session.SingleSignOutHttpSessionListener</listener-class>
  </listener>
 ```
+
 更改为spring-boot的配置方式具体代码如下：
+
 ```java
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Configuration;
