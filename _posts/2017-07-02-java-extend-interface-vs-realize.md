@@ -1,14 +1,9 @@
----
-layout: post
-title:  "hex 编码"
-date:   2017-07-2
-categories: java
----
+
 ---
 layout: post
 title:  "基于接口的继承和基于实现的继承各有什么优缺点"
 date:   2017-05-03
-categories: CAS
+categories: Java
 ---
 
 ##Question: 基于接口的继承和基于实现的继承各有什么优缺点
