@@ -81,3 +81,7 @@ categories: java
 
 - 故一个中文,将会被转换成长度为6的字符串来表示.
 
+### 三,参考网址
+
+* 1.[utf-8 wikipedia](https://zh.wikipedia.org/wiki/UTF-8)
+
