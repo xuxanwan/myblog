@@ -4,7 +4,7 @@ title:  "Java之Collection一"
 date:   2015-4-29 09:16:03
 categories: Java基础
 comments: true
----
+--------------
 ## Collection
 Collection大致可以分为List,Set,Queue,Map四个种类.
 
@@ -25,7 +25,7 @@ apples = new LinkedList<Apple>();
 + Queue	通过排队规则确定对象的顺序
 
 
-###一、List
+### 一、List
 
 
 ### 1、List的一些工具方法
@@ -57,7 +57,7 @@ apples = new LinkedList<Apple>();
 
 
 
-##参考链接
+## 参考链接
 
 1. [江南白衣~关于Java集合的小抄](http://calvin1978.blogcn.com/articles/collection.html)
 2. [Java 集合系列12之 TreeMap详细介绍(源码解析)和使用示例](http://www.cnblogs.com/skywang12345/p/3310928.html)
