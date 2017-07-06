@@ -4,7 +4,8 @@ title:  "Java之Collection一"
 date:   2015-4-29 09:16:03
 categories: Java基础
 comments: true
---------------
+---
+
 ## Collection
 Collection大致可以分为List,Set,Queue,Map四个种类.
 

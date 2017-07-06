@@ -3,6 +3,7 @@ layout: post
 title:  "hex 编码"
 date:   2017-07-2
 categories: java
+comments: true
 ---
 ## 在编码的时候如何将byte[]数据以String保存
 我了解到的办法是: base64和hex.这次来了解下hex.

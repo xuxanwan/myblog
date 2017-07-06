@@ -58,7 +58,7 @@ comments: true
 	</select>
 	```
 
-###问题又来了,在解决问题的过程中,尝试过如下形式插入主键:###
+### 问题又来了,在解决问题的过程中,尝试过如下形式插入主键:###
 
 	```
 	<insert id="insertList" parameterType="java.util.List">
@@ -89,6 +89,6 @@ is just one giant statement.
 
 
 这个还是推荐直接用java形式进行的for循环插入.起码这样不容易出错.
-###参考链接###
+### 参考链接
 1. [《深入理解mybatis原理》 MyBatis的二级缓存的设计原理](http://blog.csdn.net/luanlouis/article/details/41408341)
 2. [Mybatis Oracle Batch Update Using Foreach](http://qnalist.com/questions/5130976/mybatis-oracle-batch-update-using-foreach)

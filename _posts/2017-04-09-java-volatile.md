@@ -3,6 +3,7 @@ layout: post
 title:  "volatile关键字的作用"
 date:   2017-4-6
 categories: java 并发
+comments: true
 ---
 
 ## volatile关键字的作用

@@ -3,7 +3,7 @@ layout: post
 title:  "ElasticSearch java Demo"
 date:   2016-11-20
 categories: 工具
-
+comments: true
 ---
 前段时间研究了下Elasticsearch，今天抽空整理份elsticsearch最简单的java api 调用demo出来。
 首先去[官网](https://www.elastic.co/products/elasticsearch "官网")下好ElasticSearch的运行程序。根据安装要求安装，我这里就不一一赘述了。
