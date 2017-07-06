@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java新手问题 02"
+title:  "Java新手问题 02 面向对象基本功"
 date:   2017-07-02
 categories: Java
 comments: true

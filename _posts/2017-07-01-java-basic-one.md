@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java新手问题 01"
+title:  "Java新手问题 01 算法和数据结构"
 date:   2017-07-01
 categories: Java
 comments: true
