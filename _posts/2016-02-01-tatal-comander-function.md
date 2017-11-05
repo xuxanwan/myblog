@@ -22,6 +22,8 @@ comments: true
 |alt+f1|切换左边磁盘|
 |alt+f2|切换右边磁盘|
 
+
+
 #### 其他
 
 
@@ -31,6 +33,7 @@ comments: true
 |Ctrl+Z|添加注释|
 |ctrl +q|预览|
 |ctrl + q 切换窗口f|预览且适配图片|
+|shift+f10|打开右键菜单|
 
 #### 选择
 
